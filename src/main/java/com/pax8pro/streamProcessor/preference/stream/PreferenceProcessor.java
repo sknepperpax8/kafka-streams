@@ -10,9 +10,10 @@ import org.springframework.stereotype.Component;
 import java.util.UUID;
 import java.util.function.Function;
 
-@Component("preferenceProcessor")
 @AllArgsConstructor
+@Component("preferenceProcessor")
 public class PreferenceProcessor implements Function<KStream<String, Preference>, KStream<UUID, Preference>> {
+
     @Override
     public KStream<UUID, Preference> apply(KStream<String, Preference> preferenceStream) {
         return preferenceStream.map((k, v) -> new KeyValue<>(v.getUserId(), v), Named.as("preferences-mapped"));

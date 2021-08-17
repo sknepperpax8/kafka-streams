@@ -1,6 +1,6 @@
 # Spring Cloud Streams
 spring.cloud:
-  function.definition: userProcessor;preferenceProcessor
+  function.definition: userProcessor;preferenceProcessor;finalMessageProcessor
   stream:
     bindings:
       userProcessor-in-0:
@@ -10,7 +10,9 @@ spring.cloud:
       userProcessor-in-1:
         destination: preferences-mapped
       userProcessor-out-0:
-        destination: spring-users-name-count
+        destination: final-count
+      finalMessageProcessor-in-0:
+        destination: final-count
       preferenceProcessor-in-0:
         destination: preferences
       preferenceProcessor-out-0:
