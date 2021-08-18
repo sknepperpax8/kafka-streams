@@ -1,32 +1,28 @@
 # Spring Cloud Streams
 spring.cloud:
-  function.definition: userProcessor;preferenceProcessor;finalMessageProcessor
+  function.definition: userProcessor;userConsumer;preferenceConsumer
   stream:
     bindings:
       userProcessor-in-0:
-        destination: microsoft-users
-#       content-type: application/json
+        destination: microsoft-user
 #       content-type: application/*+avro
       userProcessor-in-1:
-        destination: preferences-mapped
+        destination: user-preferences
       userProcessor-out-0:
-        destination: final-count
-      finalMessageProcessor-in-0:
-        destination: final-count
-      preferenceProcessor-in-0:
-        destination: preferences
-      preferenceProcessor-out-0:
-        destination: preferences-mapped
+        destination: filtered-user
+      userConsumer-in-0:
+        destination: filtered-user
+      preferenceConsumer-in-0:
+        destination: user-preferences
 
 # Kafka Streams
     kafka:
       streams:
         bindings:
-          userProcessor-in-1.consumer.materializedAs: preferences-state-store-v2
+          userProcessor-in-1.consumer.materializedAs: preferences-state-store
         binder:
           functions:
-            userProcessor.applicationId: userProcessor-applicationId-v3
-            preferenceProcessor.applicationId: preferenceProcessor-applicationId-v3
+            userProcessor.applicationId: userProcessor-applicationId
           DeserializationExceptionHandler: logAndContinue
   #       processing.guarantee: exactly_once
           configuration:

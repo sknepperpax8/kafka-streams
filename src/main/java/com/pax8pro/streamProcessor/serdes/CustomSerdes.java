@@ -1,8 +1,8 @@
 package com.pax8pro.streamProcessor.serdes;
 
-import com.pax8pro.streamProcessor.preference.Preference;
-import com.pax8pro.streamProcessor.preference.UserWithPreference;
-import com.pax8pro.streamProcessor.user.User;
+import com.pax8pro.streamProcessor.preference.domain.Preference;
+import com.pax8pro.streamProcessor.preference.domain.UserWithPreference;
+import com.pax8pro.streamProcessor.user.domain.User;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 import org.springframework.kafka.support.serializer.JsonDeserializer;

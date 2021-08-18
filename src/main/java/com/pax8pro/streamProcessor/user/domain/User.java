@@ -1,4 +1,4 @@
-package com.pax8pro.streamProcessor.user;
+package com.pax8pro.streamProcessor.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
@@ -12,5 +12,5 @@ import java.util.UUID;
 public class User {
     private UUID id;
     private String name;
-    private Boolean lastMessage;
+    private String email;
 }

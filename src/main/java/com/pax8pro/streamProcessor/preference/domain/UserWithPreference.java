@@ -1,6 +1,6 @@
-package com.pax8pro.streamProcessor.preference;
+package com.pax8pro.streamProcessor.preference.domain;
 
-import com.pax8pro.streamProcessor.user.User;
+import com.pax8pro.streamProcessor.user.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

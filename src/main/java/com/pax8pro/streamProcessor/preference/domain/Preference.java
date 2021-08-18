@@ -1,4 +1,4 @@
-package com.pax8pro.streamProcessor.preference;
+package com.pax8pro.streamProcessor.preference.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
